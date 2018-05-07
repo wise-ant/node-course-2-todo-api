@@ -5,7 +5,6 @@ const { mongoose } = require('./db/mongoose.js');
 const { Todo } = require('./models/todo.js');
 const { User } = require('./models/user.js');
 
-
 const app = express();
 app.use(bodyParser.json());
 
@@ -24,7 +23,7 @@ app.post('/todos', (req, res) => {
 
 app.get('/todos', (req, res) => {
   Todo.find().then(todos => {
-    res.send(todos)
+    res.send({todos})
   }, (e) => {
     res.status(400).send(e)
   })
