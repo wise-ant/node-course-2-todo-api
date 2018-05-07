@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const { mongoose } = require('./db/mongoose.js');
-const { Todo } = require('./models/Todos.js');
-const { User } = require('./models/User.js');
+const { Todo } = require('./models/todo.js');
+const { User } = require('./models/user.js');
 
 
 const app = express();
@@ -25,3 +25,5 @@ app.post('/todos', (req, res) => {
 app.listen('3000', () => {
   console.log('Listening to port 3000');
 })
+
+module.exports = { app };
